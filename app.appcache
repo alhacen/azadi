@@ -2,3 +2,13 @@ CACHE MANIFEST
 index.html
 style.css
 standalone.js
+slideout.min.js
+assets/vendor/nucleo/css/nucleo.css
+assets/vendor/nucleo/css/nucleo.css
+assets/css/argon.css
+assets/vendor/jquery/jquery.min.js
+assets/vendor/popper/popper.min.js
+assets/vendor/bootstrap/bootstrap.min.js
+assets/js/argon.js
+# 2010-06-18:v
+

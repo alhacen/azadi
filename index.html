@@ -1,3 +1,157 @@
-<html manifest="app.appcache">
-asdf
+<!DOCTYPE html>
+<!-- <html manifest="app.appcache"> -->
+    <html>
+<head>
+    <title>Azadi</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- Icons -->
+    <link href="assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+    <!-- Argon CSS -->
+    <link type="text/css" href="assets/css/argon.css" rel="stylesheet">
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/popper/popper.min.js"></script>
+    <script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/js/argon.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-default">
+    <div class="container">
+        <a class="navbar-brand" href="#">HOME</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-default">
+            <div class="navbar-collapse-header">
+                <div class="row">
+                    <div class="col-6 collapse-brand">
+                        <a href="index.html">
+                            <img src="assets/img/brand/blue.png">
+                        </a>
+                    </div>
+                    <div class="col-6 collapse-close">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false" aria-label="Toggle navigation">
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="navbar-nav ml-lg-auto">
+                <li class="nav-item">
+                    <a class="nav-link nav-link-icon" href="#">
+                        <i class="ni ni-favourite-28"></i>
+                        <span class="nav-link-inner--text d-lg-none">Discover</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-icon" href="#">
+                        <i class="ni ni-notification-70"></i>
+                        <span class="nav-link-inner--text d-lg-none">Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link nav-link-icon" href="#" id="navbar-default_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="ni ni-settings-gear-65"></i>
+                        <span class="nav-link-inner--text d-lg-none">Settings</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<div class="container">
+<div class="row">
+    <div class="col-sm-12 subject-card">
+        <div class="row">
+            <div class="col-sm-8" style="text-align:left">
+                <div class="subject-card-data">
+                   <p><i class="ni ni-user-run"></i> Goal <span><b>75%</b></span></p> 
+                   <p><i class="ni ni-check-bold"></i> Your Attendance <span><b>75%</b></span></p> 
+                </div>
+            </div>
+            <div class="col-sm-4">
+            asdfasd
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 subject-card">
+        <div class="row">
+            <div class="col-6 col-sm-8" style="text-align:left">
+                <div class="subject-card-data">
+                    <p><i class="ni ni-collection"></i> DS <span><b>60%</b></span></p> 
+                    <p> Attendance <span><b>9/18</b></span></p> 
+                </div>
+            </div>
+            <div class="col-4 col-sm-4">
+                    <svg class="progress-ring" width="120" height="120"> <circle class="progress-ring__circle" id="cir1" stroke="white" stroke-width="6" fill="transparent" r="52" cx="60" cy="60" /><text id="cir1_label" x="50%" y="50%" text-anchor="middle" stroke="black" stroke-width="1px" dy=".3em"></text></svg>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 subject-card">
+    <span>One of three columns</span>
+    </div>
+</div>
+</div>
 </html>
+<style>
+.subject-card-data p{margin:0px}
+.subject-card{
+    text-align:center;
+    padding:20px;
+    border:1px #e4e4e4 solid;
+    background-color:white;
+    margin:5px;
+}
+body {
+    background-color:#f6f9fc;
+}
+.progress-ring__circle {
+  transition: 0.35s stroke-dashoffset;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+    </style>
+<script>
+    /*
+var appCache = window.applicationCache;
+appCache.update(); // Attempt to update the user's cache.
+
+window.addEventListener('load', function(e) {
+
+window.applicationCache.addEventListener('updateready', function(e) {
+  if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+    // Browser downloaded a new app cache.
+    //if (confirm('A new version of this site is available. Load it?')) {
+     // window.location.reload();
+    //}
+  } else {
+    // Manifest didn't changed. Nothing new to server.
+  }
+}, false);
+
+}, false);
+*/
+function setProgress(id,percent) {
+  var circle = document.getElementById(id);
+  document.getElementById(id+"_label").innerHTML=percent+"%";
+  var radius = circle.r.baseVal.value;
+  var circumference = radius * 2 * Math.PI;
+  circle.style.strokeDasharray = `${circumference} ${circumference}`;
+  circle.style.strokeDashoffset = `${circumference}`;
+  const offset = circumference - percent / 100 * circumference;
+  circle.style.strokeDashoffset = offset;
+circle.style.stroke=(percent>75)?"#9ACD32":"red"
+}
+setProgress('cir1',80)
+
+</script>
